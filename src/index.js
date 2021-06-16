@@ -134,9 +134,14 @@ require('dotenv').config();
             return;
         }
 
-        record.authorization = authorization;
+        if (record.length) {
+            record.forEach(r => (r.authorization = authorization));
 
-        await collection.insertOne(record);
+            await collection.insertMany(record);
+        } else {
+            record.authorization = authorization;
+            await collection.insertOne(record);
+        }
 
         res.status(201).send(record);
     });
