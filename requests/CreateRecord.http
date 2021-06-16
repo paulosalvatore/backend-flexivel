@@ -1,0 +1,13 @@
+POST localhost:3000/
+Authorization: psalvatore@blueedtech.com.br
+Content-Type: application/json
+
+{
+  "nome": "Paulo Salvatore",
+  "key": "value",
+  "number": 1,
+  "boolean": true,
+  "object": {
+    "key": "value"
+  }
+}
